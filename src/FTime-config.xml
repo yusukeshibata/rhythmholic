@@ -1,0 +1,19 @@
+<flex-config>
+  <output>ftime.swf</output>
+  <target-player>10</target-player>
+  <default-size>
+    <width>640</width>
+    <height>480</height>
+  </default-size>
+  <default-frame-rate>45</default-frame-rate>
+  <default-background-color>0x000000</default-background-color>
+  <use-network>false</use-network>
+  <benchmark>false</benchmark>
+  <compiler>
+    <incremental>false</incremental>
+    <library-path append="true">
+      <path-element>./as3corelib.swc</path-element>
+    </library-path>
+  </compiler>
+  <static-link-runtime-shared-libraries>true</static-link-runtime-shared-libraries>
+</flex-config>

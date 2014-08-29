@@ -1,0 +1,23 @@
+{
+  "name": "rhythmholic",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yusukeshibata/backscreen.git"
+  },
+  "author": "Yusuke SHIBATA",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "mxmlc": "0.0.7",
+    "grunt-mxmlc": "^0.5.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "flex-sdk": "^3.6.0-0",
+    "grunt-compc": "^1.0.0"
+  }
+}
