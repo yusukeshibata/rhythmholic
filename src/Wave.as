@@ -1,20 +1,19 @@
-package {
+﻿package {
   import flash.events.*;
   import flash.display.*;
   import flash.media.*;
   import flash.geom.*;
   import flash.ui.*;
   import flash.utils.ByteArray;
-  import jp.halinc.display.BaseSprite;
   
-  public class Wave extends BaseSprite {
+  public class Wave extends Sprite {
 
     private static const DEFAULT_POWER:int = 500;
 
     private static const BUF_WIDTH:int = 320;
     private static const BUF_HEIGHT:int = 240;
 
-    [Embed(source='./sample2.mp3')]
+    [Embed(source='./res/sample2.mp3')]
       private static const SoundSample:Class;
 
     private var sound_:Sound;
@@ -30,7 +29,7 @@ package {
       rot90_ = false;
       
       //
-      addEventListener(BaseSprite.STAGE_DETECTED, stage_detected);
+      addEventListener(Event.ADDED_TO_STAGE, added_to_stage);
       addEventListener(Event.REMOVED_FROM_STAGE, removed_from_stage);
     }
     public function removed_from_stage(evt:Event):void {
@@ -42,16 +41,20 @@ package {
     private var bdViewBuf_:BitmapData;
     private var bdViewLeft_:BitmapData;
     private var bdViewRight_:BitmapData;
+	
+	private var sw:Number;
+	private var sh:Number;
 
-    
-
-    public function stage_detected(evt:Event):void {
+    public function added_to_stage(evt:Event):void {
       stage.scaleMode = StageScaleMode.NO_SCALE;
       stage.align = StageAlign.TOP_LEFT;
       stage.frameRate = 30;
       stage.quality = StageQuality.LOW;
       stage.displayState = StageDisplayState.FULL_SCREEN;
       Mouse.hide();
+		
+	  sw = stage.stageWidth;
+	  sh = stage.stageHeight;
 
       //
       bdViewBuf_ = new BitmapData(BUF_WIDTH,BUF_HEIGHT,false,0x000000);
